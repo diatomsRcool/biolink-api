@@ -150,6 +150,7 @@ association = api.model('Association', {
     'relation': fields.Nested(relation_ref, description='Relationship type connecting subject and object', required=True),
     'slim': fields.List(fields.String, description='Objects mapped to a slim'),
     'negated': fields.Boolean(description='True if association is negated'),
+    'frequency': fields.Nested(named_object_core, description='Frequency of phenotype in relation to disease', required=False),
     'qualifiers': fields.List(fields.String, description='Qualifier on the association'),
     'evidence_graph': fields.Nested(bbop_graph, description='An indirect association is a join between two or more direct assocations, e.g. gene to disease via ortholog. We record the full set of associations as a graph object'),
     'evidence_types': fields.List(fields.Nested(named_object), description='Evidence types (ECO classes) extracted from evidence graph'),
